@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "FirstViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    // Точка замещения для настройки после запуска приложения.
+    NSDictionary *defaults = @{
+    kWarpDriveKey : @YES,
+    kWarpFactorKey : @5,
+    kFavoriteSinKey : @"Greed"};
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
+    
     return YES;
 }
 
